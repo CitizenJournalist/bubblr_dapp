@@ -1,13 +1,14 @@
 # bubblr_dapp
 
 BBLR ERC20 utility token
+
 MAT ERC721 token and marketplace
 
 ## Requirements
 
 https://embark.status.im/docs/installation.html
-
-(make sure to install local IPFS)
+- install the latest stable, ie `npm -g install embark`
+- make sure to install local IPFS
 
 `npm install`
 
