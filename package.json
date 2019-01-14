@@ -1,0 +1,15 @@
+{
+  "name": "bubblr_dapp_mat",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "test": "embark test"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+    "openzeppelin-solidity": "^2.0.0"
+  },
+  "devDependencies": {}
+}
