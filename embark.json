@@ -7,11 +7,13 @@
     "index.html": "app/index.html"
   },
   "buildDir": "dist/",
-  "config": "config/",
-  "versions": {
-    "web3": "1.0.0-beta",
-    "solc": "0.4.25",
-    "ipfs-api": "17.2.4"
+  "config": {
+    "blockchain": "config/blockchain.js",
+    "communication": false,
+    "contracts": "config/contracts.js",
+    "namesystem": false,
+    "storage": "config/storage.js",
+    "webserver": "config/webserver.js"
   },
   "plugins": {
   },

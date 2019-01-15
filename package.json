@@ -1,12 +1,12 @@
 {
-  "name": "bubblr_dapp_mat",
+  "name": "bubblr_dapp",
   "version": "0.0.1",
-  "description": "",
+  "description": "BBLR ERC20 utility token & MAT ERC721 token and marketplace",
   "scripts": {
     "test": "embark test"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Wil Bown <wilbown@gmail.com>",
+  "license": "MIT",
   "homepage": "",
   "dependencies": {
     "openzeppelin-solidity": "^2.0.0"

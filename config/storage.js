@@ -4,7 +4,11 @@ module.exports = {
     enabled: true,
     available_providers: ['ipfs'],
     ipfs_bin: 'ipfs',
-    provider: 'ipfs'
+    provider: 'ipfs',
+    versions: {
+      // TODO 'ipfs-api': '28.1.1'
+      'ipfs-api': '18.2.0'
+    }
   },
 
   // default environment, merges with the settings in default

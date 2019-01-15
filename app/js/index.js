@@ -1,5 +1,6 @@
-import EmbarkJS from 'Embark/EmbarkJS';
+/* globals $ */
 
+import EmbarkJS from 'Embark/EmbarkJS';
 import MATToken from 'Embark/contracts/MATToken';
 import BBLRToken from 'Embark/contracts/BBLRToken';
 

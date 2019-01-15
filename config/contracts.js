@@ -7,13 +7,8 @@ module.exports = {
     ],
     gas: 'auto',
     contracts: {
-      'MATToken': {
-        args: {
-          'valueToken': '$BBLRToken'
-        }
-      },
-      'Roles': { deploy: false },
       'SafeMath': { deploy: false },
+      'Roles': { deploy: false },
 
       'ERC20': { deploy: false },
       'ERC20Burnable': { deploy: false },
@@ -30,7 +25,9 @@ module.exports = {
       // example:
       // 'ERC20': {
       //   deploy: false,
-      //   args: [ 'MATToken', 'MAT' ],
+      //   from: '0xfeedaa0e295b09cd84d6ea2cce390eb443bcfdfc',
+      //   fromIndex: 0,
+      //   args: [ 'Token Name', 'SYMB' ],
       //   args: {
       //     'initial_value': 100
       //   },
@@ -38,41 +35,60 @@ module.exports = {
       //   gas: 800000,
       //   gasPrice: 5,
       // },
+    },
+    // Blockchain node to deploy the contracts
+    // deployment: {
+    //   // Accounts to use instead of the default account to populate your wallet
+    //   accounts: [
+    //     {
+    //       privateKey: 'your_private_key',
+    //       balance: '5 ether'  // You can set the balance of the account in the dev environment
+    //                           // Balances are in Wei, but you can specify the unit with its name
+    //     },
+    //     {
+    //       privateKeyFile: 'path/to/file', // Either a keystore or a list of keys, separated by , or ;
+    //       password: 'passwordForTheKeystore' // Needed to decrypt the keystore file
+    //     },
+    //     {
+    //       mnemonic: '12 word mnemonic', // BIP39 https://iancoleman.io/bip39/
+    //       addressIndex: '0', // Optionnal. The index to start getting the address
+    //       numAddresses: '1', // Optionnal. The number of addresses to get
+    //       hdpath: 'm/44\'/60\'/0\'/0/' // Optionnal. HD derivation path: m/44'/60'/0'/0
+    //     }
+    //   ]
+    // },
+    versions: {
+      'web3': '1.0.0-beta.37',
+      'solc': '0.4.25',
+      // TODO 'solc': '0.5.2'
     }
   },
 
   // default environment, merges with the settings in default
   // assumed to be the intended environment by `embark run`
   development: {
-    // Blockchain node to deploy the contracts
-    deployment: {
-      host: 'localhost', // Host of the blockchain node
-      port: 8545, // Port of the blockchain node
-      type: 'rpc' // Type of connection (ws or rpc),
-      // Accounts to use instead of the default account to populate your wallet
-      /* ,accounts: [
-        {
-          privateKey: 'your_private_key',
-          balance: '5 ether'  // You can set the balance of the account in the dev environment
-                              // Balances are in Wei, but you can specify the unit with its name
-        },
-        {
-          privateKeyFile: 'path/to/file', // Either a keystore or a list of keys, separated by , or ;
-          password: 'passwordForTheKeystore' // Needed to decrypt the keystore file
-        },
-        {
-          mnemonic: '12 word mnemonic',
-          addressIndex: '0', // Optionnal. The index to start getting the address
-          numAddresses: '1', // Optionnal. The number of addresses to get
-          hdpath: 'm/44\'/60\'/0\'/0/' // Optionnal. HD derivation path
-        }
-      ] */
-    },
     dappConnection: [
       'ws://localhost:8546',
       'http://localhost:8545',
       '$WEB3' // uses pre existing web3 object if available (e.g in Mist)
-    ]
+    ],
+    contracts: {
+      'MATToken': {
+        args: {
+          'valueToken': '$BBLRToken'
+        }
+      }
+    },
+    deployment: {
+      host: 'localhost', // Host of the blockchain node
+      port: 8545, // Port of the blockchain node
+      type: 'rpc', // Type of connection (ws or rpc),
+      accounts: [
+        { mnemonic: 'depart spot hello jealous tip maximum renew practice flower danger enforce engine', balance: '5 ether' },
+        { mnemonic: 'success pause smile chimney plastic cousin ensure lawsuit spring rebel flat elder', balance: '5 ether' },
+        { mnemonic: 'method potato interest wrap task turn sick live swarm tell purpose fly', balance: '5 ether' }
+      ]
+    }
   },
 
   // merges with the settings in default
@@ -83,6 +99,13 @@ module.exports = {
   // merges with the settings in default
   // used with 'embark run testnet'
   testnet: {
+    contracts: {
+      'MATToken': {
+        args: {
+          'valueToken': '$BBLRToken'
+        }
+      }
+    },
     deployment: {
       accounts: [
         {
@@ -102,6 +125,7 @@ module.exports = {
   // merges with the settings in default
   // used with 'embark run livenet'
   livenet: {
+    // TODO add Ledger support
   }
 
   // you can name an environment with specific settings and then specify with
